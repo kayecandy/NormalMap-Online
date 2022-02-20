@@ -1,3 +1,0 @@
-Ambient occlusion: Edges + gaussian filter - heightmap (high pos)
-
-specular map: 
