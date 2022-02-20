@@ -1,4 +1,4 @@
-THREE.NormalMapShader = {
+export const NormalMapShader = {
 	uniforms: {
 		"type": 		{type: "1i", value: 0},
     	"invertR": 		{type: "1f", value: 1},
