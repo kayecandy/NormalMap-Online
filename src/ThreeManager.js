@@ -69,7 +69,7 @@ export class ThreeManager {
     this.renderer = new WebGLRenderer({
       alpha: true,
       antialias: true,
-      canvas: canvas,
+      canvas: this.canvas,
     });
 
     renderer.setClearColor(0x000000, 0);
