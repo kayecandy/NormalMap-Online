@@ -5,11 +5,10 @@
   "main": "./src/index.js",
   "type": "module",
   "exports": {
-    ".": "./src/index.js",
-    "./*": "./src/*"
+    ".": "./src/index.js"
   },
   "files": [
-    "./src/*"
+    "src"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
