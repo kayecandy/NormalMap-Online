@@ -1,18 +1,16 @@
-import { config } from "./config.js";
-import { ThreeManager } from "./ThreeManager.js";
-
-
+import { config } from './config.js';
+import { ThreeManager } from './ThreeManager.js';
 
 export class NormalMapGenerator{
+    /**
+     * @private
+     */
     static _instance;
     /**
+     * @private
      * @type {ThreeManager}
      */
     threeManager;
-
-
-    nmoRenderNormalview;
-    nmoNormalMap;
 
     constructor() {
         this.threeManager = new ThreeManager();
@@ -35,6 +33,10 @@ export class NormalMapGenerator{
      * @param {HTMLImageElement} image 
      */
     generateFromImage(image, _config = config) {
-        return this.threeManager.renderNormalImage(image, _config);
+        const __config = {
+            ...config,
+            ..._config
+        }
+        return this.threeManager.renderNormalImage(image, __config);
     }
 }

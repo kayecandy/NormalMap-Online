@@ -17,9 +17,9 @@ export const InvertValues = {
 }
 
 export const config = {
-    strength: 0.13,
-    level: 5.6,
-    blur: -6,
+    strength: 0.5,
+    level: 5.9,
+    blur: -14,
     /**
      * @type {Enumerator<typeof NormalAlgorithm>}
      */
