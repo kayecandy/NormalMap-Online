@@ -1,4 +1,3 @@
-/SFS
-/images/*
-/Pics/*
-/cubemaps/*
+
+node_modules
+.vscode
