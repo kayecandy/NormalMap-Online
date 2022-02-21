@@ -4,6 +4,9 @@
   "description": "NormalMap Generator Online",
   "main": "./src/index.js",
   "type": "module",
+  "exports": {
+    "./*": "./src/*"
+  },
   "files": [
     "./src/*"
   ],
@@ -22,7 +25,6 @@
   },
   "homepage": "https://github.com/kayecandy/NormalMap-Online#readme",
   "dependencies": {
-    "jsdom": "^19.0.0",
     "three": "^0.137.5"
   },
   "devDependencies": {
