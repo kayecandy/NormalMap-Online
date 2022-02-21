@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "NormalMap Generator Online",
   "main": "index.js",
+  "type": "module",
   "exports": {
     ".": "./src/*"
   },
@@ -25,5 +26,8 @@
   "homepage": "https://github.com/kayecandy/NormalMap-Online#readme",
   "dependencies": {
     "three": "^0.137.5"
+  },
+  "devDependencies": {
+    "express": "^4.17.3"
   }
 }

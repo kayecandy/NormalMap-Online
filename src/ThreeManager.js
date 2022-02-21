@@ -1,16 +1,17 @@
-import { Mesh } from "three";
-import { PlaneBufferGeometry } from "three";
-import { OrthographicCamera, Scene, WebGLRenderer } from "three";
-import { config } from "./config";
-import { NormalMapShader } from "./shader/NormalMapShader";
+import { Mesh, OrthographicCamera, PlaneBufferGeometry, Scene, WebGLRenderer } from "three";
+import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer.js";
+import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass.js";
+import { ShaderPass } from "three/examples/jsm/postprocessing/ShaderPass.js";
+import { HorizontalBlurShader } from "three/examples/jsm/shaders/HorizontalBlurShader.js";
+import { VerticalBlurShader } from "three/examples/jsm/shaders/VerticalBlurShader.js";
+import { config } from "./config.js";
+import { NormalMapShader } from "./shader/NormalMapShader.js";
 
-import { HorizontalBlurShader } from "three/examples/jsm/shaders/HorizontalBlurShader";
-import { VerticalBlurShader } from "three/examples/jsm/shaders/VerticalBlurShader";
-import { ShaderPass } from "three/examples/jsm/postprocessing/ShaderPass";
-import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass";
-import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer";
 
 export class ThreeManager {
+
+  static _instance;
+
   canvas;
   /**
    * @type {WebGLRenderer}
@@ -47,6 +48,19 @@ export class ThreeManager {
     this.__initThree();
 
     this.__initPostProcessing();
+  }
+
+  /**
+   * @static
+   * @function
+   * @returns {ThreeManager} instance
+   */
+  static instance() {
+    if (!ThreeManager._instance) {
+      ThreeManager._instance = new ThreeManager();
+    }
+
+    return ThreeManager._instance;
   }
 
   __initThree() {
